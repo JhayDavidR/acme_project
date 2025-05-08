@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow rounded-3">
+          <div class="card-body">
+            <h4 class="card-title text-center mb-4">Lista de Conductores</h4>
+  
+            <div *ngIf="isLoading">Cargando...</div>
+            <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+            
+            <!-- Campo de filtro -->
+            <input type="text" class="form-control" [(ngModel)]="filtro" placeholder="Filtrar por cédula, nombre, etc." />
+            
+            <table *ngIf="!isLoading && !error" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Cédula</th>
+                  <th>Primer Nombre</th>
+                  <th>Segundo Nombre</th>
+                  <th>Apellidos</th>
+                  <th>Dirección</th>
+                  <th>Teléfono</th>
+                  <th>Ciudad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let conductor of conductoresFiltrados">
+                  <td>{{ conductor.cedula }}</td>
+                  <td>{{ conductor.primer_nombre }}</td>
+                  <td>{{ conductor.segundo_nombre }}</td>
+                  <td>{{ conductor.apellidos }}</td>
+                  <td>{{ conductor.direccion }}</td>
+                  <td>{{ conductor.telefono }}</td>
+                  <td>{{ conductor.ciudad }}</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,80 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow rounded-3">
+        <div class="card-body">
+          <h4 class="card-title mb-4 text-center">Registro de Vehículo</h4>
+          <form [formGroup]="vehiculoForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" formControlName="placa" class="form-control"
+                  placeholder="Formato: 3 letras mayúsculas + 3 números (ej: ABC123)">
+                <div *ngIf="vehiculoForm.get('placa')?.invalid && vehiculoForm.get('placa')?.touched"
+                  class="text-danger">
+                  Placa inválida. Formato requerido: ABC123
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="color">Color</label>
+                <input type="text" id="color" formControlName="color" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" formControlName="marca" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="tipo_vehiculo">Tipo de Vehículo</label>
+                <select id="tipo_vehiculo" formControlName="tipo_vehiculo" class="form-control">
+                  <option value="particular">Particular</option>
+                  <option value="comercial">Comercial</option>
+                  <option value="oficial">Oficial</option>
+                  <option value="publico">Publico</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="conductor_id">Conductor</label>
+                <select id="conductor_id" formControlName="conductor_id" class="form-control">
+                  <option value="">Seleccione un conductor</option>
+                  <option *ngFor="let conductor of conductores" [value]="conductor.cedula">
+                    {{ conductor.primer_nombre }}
+                    {{ conductor.segundo_nombre || '' }}
+                    {{ conductor.apellidos }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="propietario_id">Propietario</label>
+              <select id="propietario_id" formControlName="propietario_id" class="form-control">
+                <option value="">Seleccione un propietario</option>
+                <option *ngFor="let propietario of propietarios" [value]="propietario.cedula">
+                  {{ propietario.primer_nombre }}
+                  {{ propietario.segundo_nombre || '' }}
+                  {{ propietario.apellidos }}
+                </option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="vehiculoForm.invalid">
+              Registrar Vehículo
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

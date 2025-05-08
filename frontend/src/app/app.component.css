@@ -1,0 +1,44 @@
+.home-container {
+    margin-top: 50px; /* Opcional, si tienes un encabezado */
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Fondo del menú */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Efecto de transición */
+  }
+  
+  nav ul li a:hover {
+    background-color: #575757; /* Cambio de color al pasar el ratón */
+    color: #fff; /* Asegura que el color del texto sea blanco en el hover */
+  }
+  
+  nav ul li a.router-link-active {
+    background-color: #333;
+    color: #fff; /* Opcional: Estilo para el enlace activo */
+  }
+  

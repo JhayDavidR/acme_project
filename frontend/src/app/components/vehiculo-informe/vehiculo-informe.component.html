@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card shadow rounded-3">
+        <div class="card-body">
+          <h4>Informe de Vehículos</h4>
+          <button (click)="exportarExcel()">📤 Exportar a Excel</button>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Conductor</th>
+                <th>Propietario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let v of vehiculos">
+                <td>{{ v.placa }}</td>
+                <td>{{ v.marca }}</td>
+                <td>{{ v.conductor.primer_nombre }} {{ v.conductor.segundo_nombre || '' }} {{ v.conductor.apellidos }}
+                </td>
+                <td>{{ v.propietario.primer_nombre }} {{ v.propietario.segundo_nombre || '' }} {{
+                  v.propietario.apellidos }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

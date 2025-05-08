@@ -1,0 +1,58 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow rounded-3">
+          <div class="card-body">
+            <h4 class="card-title text-center mb-4">Registro de Conductor</h4>
+            <form [formGroup]="conductorForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="cedula">Cédula</label>
+                <input type="text" id="cedula" formControlName="cedula" class="form-control">
+                <div *ngIf="cedula?.invalid && cedula?.touched" class="text-danger">
+                  Cédula inválida. Solo números entre 6 y 10 dígitos.
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="primer_nombre">Primer Nombre</label>
+                <input type="text" id="primer_nombre" formControlName="primer_nombre" class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label for="segundo_nombre">Segundo Nombre (opcional)</label>
+                <input type="text" id="segundo_nombre" formControlName="segundo_nombre" class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" formControlName="apellidos" class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" formControlName="direccion" class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" formControlName="telefono" class="form-control">
+                <div *ngIf="telefono?.invalid && telefono?.touched" class="text-danger">
+                  Teléfono inválido. Solo números entre 7 y 10 dígitos.
+                </div>
+              </div>
+  
+              <div class="mb-4">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" formControlName="ciudad" class="form-control">
+              </div>
+  
+              <button type="submit" class="btn btn-primary" [disabled]="conductorForm.invalid">
+                Registrar Conductor
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

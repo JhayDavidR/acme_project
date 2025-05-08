@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card shadow rounded-3">
+        <div class="card-body">
+          <div class="container mt-4">
+            <h4>Lista de Propietarios</h4>
+
+            <div *ngIf="isLoading">Cargando...</div>
+            <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+            <!-- Campo de filtro -->
+            <input type="text" class="form-control mb-3" placeholder="Buscar propietario..." [(ngModel)]="filtro" />
+
+
+            <table class="table table-bordered table-striped" *ngIf="!isLoading && propietariosFiltrados.length > 0">
+              <thead class="table-dark">
+                <tr>
+                  <th>Primer Nombre</th>
+                  <th>Segundo Nombre</th>
+                  <th>Apellidos</th>
+                  <th>Dirección</th>
+                  <th>Teléfono</th>
+                  <th>Ciudad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of propietariosFiltrados">
+                  <td>{{ p.primer_nombre }}</td>
+                  <td>{{ p.segundo_nombre || '-' }}</td>
+                  <td>{{ p.apellidos }}</td>
+                  <td>{{ p.direccion }}</td>
+                  <td>{{ p.telefono }}</td>
+                  <td>{{ p.ciudad }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div *ngIf="!isLoading && propietariosFiltrados.length === 0">
+              No se encontraron resultados.
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
