@@ -30,7 +30,7 @@ export class PropietarioListComponent implements OnInit {
         this.isLoading = false;
       },
       error: (err) => {
-        console.error('Error al cargar propietarios:', err);
+        // console.error('Error al cargar propietarios:', err);
         this.error = 'Error al cargar propietarios';
         this.isLoading = false;
       }

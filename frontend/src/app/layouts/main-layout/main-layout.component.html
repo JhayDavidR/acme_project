@@ -1,0 +1,29 @@
+<div class="app-container">
+  <!-- Menú estático -->
+  <header class="app-header">
+    <nav>
+      <div class="logo">
+          <img src="/assets/img/acme_logo.png" alt="Logo ACME" style="max-width: 300px;">
+      </div>
+      <ul class="nav-links">
+        <li><a routerLink="/admin/vehiculo-form" routerLinkActive="active">Registrar Vehículo</a></li>
+        <li><a routerLink="/admin/conductor-form" routerLinkActive="active">Registrar Conductor</a></li>
+        <li><a routerLink="/admin/propietario-form" routerLinkActive="active">Registrar Propietario</a></li>
+        <li><a routerLink="/admin/vehiculo-list" routerLinkActive="active">Consultar Vehículos</a></li>
+        <li><a routerLink="/admin/conductor-list" routerLinkActive="active">Consultar Conductores</a></li>
+        <li><a routerLink="/admin/propietario-list" routerLinkActive="active">Consultar Propietarios</a></li>
+        <li><a routerLink="/admin/vehiculo-informe" routerLinkActive="active">Informe de Vehículos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido dinámico -->
+  <main class="app-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer estático -->
+  <footer class="app-footer">
+    <p>Sistema de Gestión © 2025</p>
+  </footer>
+</div>

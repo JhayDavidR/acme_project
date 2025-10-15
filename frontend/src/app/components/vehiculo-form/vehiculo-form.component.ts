@@ -50,7 +50,7 @@ export class VehiculoFormComponent implements OnInit {
   loadConductores() {
     this.conductorService.getConductores().subscribe({
       next: (data) => {
-        console.log('Datos COMPLETOS de conductores:', JSON.parse(JSON.stringify(data)));
+        // console.log('Datos COMPLETOS de conductores:', JSON.parse(JSON.stringify(data)));
         this.conductores = Array.isArray(data) ? data : [];
       },
       // ...
@@ -60,7 +60,7 @@ export class VehiculoFormComponent implements OnInit {
     this.propietarioService.getPropietarios().subscribe({
       next: (data) => {
         this.propietarios = data;
-        console.log('Propietarios recibidos:', data); // <-- Añade esto
+        // console.log('Propietarios recibidos:', data); // <-- Añade esto
       },
       error: (error) => console.error('Error cargando propietarios:', error)
     });
