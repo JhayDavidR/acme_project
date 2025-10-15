@@ -1,44 +1,10 @@
-.home-container {
-    margin-top: 50px; /* Opcional, si tienes un encabezado */
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333; /* Fondo del menú */
-    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: white; /* Color del texto */
-    font-size: 16px;
-    padding: 10px;
-    transition: background-color 0.3s ease; /* Efecto de transición */
-  }
-  
-  nav ul li a:hover {
-    background-color: #575757; /* Cambio de color al pasar el ratón */
-    color: #fff; /* Asegura que el color del texto sea blanco en el hover */
-  }
-  
-  nav ul li a.router-link-active {
-    background-color: #333;
-    color: #fff; /* Opcional: Estilo para el enlace activo */
-  }
-  
+/* Asumiendo que .app-content ya tiene flex: 1; del layout principal */
+.app-content {
+    /* Si la imagen está en una vista de componente (como /home) dentro del router-outlet: */
+    display: flex; /* Habilita Flexbox */
+    justify-content: center; /* Centra horizontalmente el contenido hijo */
+    align-items: center; /* Centra verticalmente el contenido hijo */
+    flex-grow: 1; /* Asegura que ocupe todo el espacio vertical disponible */
+    /* El flex-grow: 1 ya debería estar en el .app-content del layout */
+    height: 100%; /* Asegura que ocupe el 100% de la altura de la sección */
+}

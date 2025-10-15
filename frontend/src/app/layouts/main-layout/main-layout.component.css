@@ -35,6 +35,69 @@
 .nav-links a.active {
   border-bottom: 2px solid #FF6B35;
 }
+/* main-layout.component.css */
+
+/* ... Tus estilos de app-container, app-header, etc. ... */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 0 5px 0;
+    display: block;
+    cursor: pointer; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    padding: 8px 0;
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    color: #003366;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    border-bottom: none;
+}
+
+/* CLAVE: Muestra el submenú cuando la clase 'open' está activa */
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+.dropdown.open .dropbtn,
+.dropdown:hover .dropbtn {
+    border-bottom: 2px solid #FF6B35;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #FF6B35;
+}
+
+.dropdown-content a.active {
+    font-weight: bold;
+    background-color: #e0f7fa;
+    border-bottom: none !important;
+}
 
 .app-content {
   flex: 1;
@@ -47,3 +110,9 @@
   text-align: center;
   padding: 1rem;
 }
+
+.logo a {
+  cursor: pointer;
+  display: inline-block;
+}
+
